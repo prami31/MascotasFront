@@ -15,9 +15,9 @@ function App (){
   const [modalEliminar,setModalEliminar]=useState(false);
 
   const [gestorSeleccionado,setGestorSeleccionado]=useState({
-    Codigo="",
-    Nombre="",
-    Tamanio=""
+    Codigo :"",
+    Nombre:"",
+    Tamanio:""
   })
   const handleChange=e=>{
     const {name,value}=e.target;
@@ -68,7 +68,7 @@ function App (){
           gestor.Tamanio=respuestra.Tamanio;
         }
       }
-    }).cath(error=>{
+    )}).cath(error=>{
       console.log(error);
     })
   }
@@ -151,7 +151,7 @@ function App (){
           <div className='form-group'>
             <label>Codigo:</label>
             <br />
-            <input type="text" className='form-control' name=Codigo" readOnly value= { gestorSeleccionado && gestorSeleccionado.Codigo}/>
+            <input type="text" className='form-control' name="Codigo" readOnly value= { gestorSeleccionado && gestorSeleccionado.Codigo}/>
             <br />
             <label>Nombre:</label>
             <br />
@@ -170,6 +170,7 @@ function App (){
 
     
       </Modal>
+      
       <Modal>
         <ModalBody>
           Estas seguro de querer eliminar la db
@@ -177,12 +178,11 @@ function App (){
         <ModalFooter>
           <button className='btn btn-danger' onClick={()=>peticioneDelete()}>Si</button>
           <button className='btn btn-secomdary'>No</button>
+        </ModalFooter>
       </Modal>
 
-
-></ModalFooter>
     </div>
   )
-  }
 }
+
 export default App;
